@@ -1,5 +1,8 @@
-<div>
-  <input type="text" placeholder="name" #name />
-  <input type="text" placeholder="url" #url />
-  <button (click)="AddTutorial(name.value, url.value)">Add Tutorial</button>
+<div class="container">
+  <h4>Add Tutorial form</h4>
+  <form class="form-group">
+    <input type="text" class="form-control" placeholder="name" #name />
+    <input type="text" class="form-control" placeholder="url" #url />
+    <button class="btn btn-primary" (click)="AddTutorial(name.value, url.value)">Add Tutorial</button>
+  </form>
 </div>
