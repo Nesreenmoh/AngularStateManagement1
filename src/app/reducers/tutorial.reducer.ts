@@ -4,6 +4,7 @@ import * as TutorialActions from './../actions/tutorial.actions';
 
 // create the data we are going to pass
 const initialState: Tutorial = {
+  id: 6756,
   name: 'Initial Tutorial',
   url: 'http://google.com',
 };
@@ -15,8 +16,8 @@ export function reducer(state: Tutorial[] = [initialState], action: TutorialActi
       return [...state, action.payload];
 
     case TutorialActions.REMOVE_TUTORIAL:
-      state.splice(action.payload, 1); // action.payload will be the index now that we send
-      return state;
+      // state.splice(action.payload, 1); // action.payload will be the index now that we send
+      return state.filter((item) => item.id !== action.payload);
     default:
       return state; // by default it will return the same state
   }

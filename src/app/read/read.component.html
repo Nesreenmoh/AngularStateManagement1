@@ -2,7 +2,11 @@
   <h3>Tutorials</h3>
 
   <ul class="list-group">
-    <li class="list-group-item list-group-item-info" (click)="deleteTutorial(i)" *ngFor="let tutorial of tutorials | async; let i = index">
+    <li
+      class="list-group-item list-group-item-info"
+      *ngFor="let tutorial of tutorials | async; let i = index"
+      (click)="deleteTutorial(tutorial.id)"
+    >
       <a [href]="tutorial.url" target="_blank">{{ tutorial.name }}</a>
     </li>
   </ul>
